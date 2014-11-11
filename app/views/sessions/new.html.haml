@@ -3,12 +3,9 @@
 
 
 = form_tag sessions_path do
-  .form-group
-    = label_tag :email
-    = text_field_tag :email, params[:email], class:'form-control'
-  .form-group
-    = label_tag :password
-    = password_field_tag :password, params[:password], class:'form-control'
+  = input_for :email
+  = input_for :password
+  = input_for :remember_me, :check_box_tag
 
   .form-group
     = submit_tag :submit, class:'btn btn-primary'
