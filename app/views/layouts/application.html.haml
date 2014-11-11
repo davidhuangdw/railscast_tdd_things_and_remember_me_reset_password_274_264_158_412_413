@@ -40,7 +40,7 @@
               %li= link_to "Sign Up", signup_path
     .container
       - flash.each do |name, msg|
-        = content_tag :div, :class => "alert alert-#{name == :error ? "danger" : "success" } alert-dismissable" do
+        = content_tag :div, :class => "alert alert-#{name.to_s == 'alert' ? "danger" : "success" } alert-dismissable" do
           %button.close{:type => "button", :data => {:dismiss => "alert"}, :aria => {:hidden => "true"} } &times;
           = msg
       = yield

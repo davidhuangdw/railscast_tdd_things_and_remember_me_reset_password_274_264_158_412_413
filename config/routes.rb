@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :users
   get '/signup' => 'users#new', as: 'signup'
-  root "users#new"
+  root "sessions#new"
 
   resources :sessions
   get '/login' => 'sessions#new', as: 'login'

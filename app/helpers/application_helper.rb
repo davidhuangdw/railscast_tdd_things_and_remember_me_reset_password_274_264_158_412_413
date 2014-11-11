@@ -1,11 +1,16 @@
 module ApplicationHelper
 
   def input_for(column, field_method=default_field_method(column))
+    is_submit = field_method == :submit_tag
     field_method = method(field_method)
     column =column.to_sym
     content_tag :div, class:'form-group' do
-      label_tag(column) +
-      field_method.call(column, params[column], class:'form-control')
+      if is_submit
+        submit_tag column, class:'btn btn-primary'
+      else
+        label_tag(column) +
+            field_method.call(column, params[column], class:'form-control')
+      end
     end
   end
 
