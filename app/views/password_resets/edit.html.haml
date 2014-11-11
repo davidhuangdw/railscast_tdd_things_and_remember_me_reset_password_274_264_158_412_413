@@ -1,0 +1,11 @@
+.page-header
+  %h1 Reset password
+
+= simple_form_for @user, url:password_reset_path(params[:id]) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :password
+    = f.input :password_confirmation
+  .form-actions
+    = f.button :submit, 'Reset'
