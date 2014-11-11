@@ -7,5 +7,6 @@
   = input_for :password
   = input_for :remember_me, :check_box_tag
 
-  .form-group
-    = submit_tag :submit, class:'btn btn-primary'
+  = input_for 'Log In', :submit_tag
+
+= link_to 'Password forgotten?', new_password_reset_path
