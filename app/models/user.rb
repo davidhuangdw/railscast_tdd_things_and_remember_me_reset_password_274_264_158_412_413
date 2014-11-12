@@ -3,5 +3,6 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
 
   def send_password_reset
+    UserMailer.password_reset(self).deliver
   end
 end

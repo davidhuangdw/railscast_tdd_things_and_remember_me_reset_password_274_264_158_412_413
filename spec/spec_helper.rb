@@ -16,6 +16,7 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'capybara/rspec'
 require 'factory_girl'
+Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
@@ -53,6 +54,9 @@ RSpec.configure do |config|
   config.order = "random"
   config.include Capybara::DSL
   config.include FactoryGirl::Syntax::Methods
+
+  config.include(MailerMacros)
+  config.before(:each) {reset_email}
 
 
 =begin
