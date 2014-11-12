@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :password_resets
+
   resources :users
   get '/signup' => 'users#new', as: 'signup'
   root "sessions#new"
@@ -7,6 +9,7 @@ Rails.application.routes.draw do
   resources :sessions
   get '/login' => 'sessions#new', as: 'login'
   get '/logout' => 'sessions#destroy', as: 'logout'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

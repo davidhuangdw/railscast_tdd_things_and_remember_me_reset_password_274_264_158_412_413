@@ -46,12 +46,14 @@ gem "simple_form", "~>3.1.0.rc1"
 gem "font-awesome-rails"
 gem "active_model_serializers"
 gem "draper"
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+end
 group :development, :test do
   gem "pry-rails"
   gem "pry-doc"
   gem "pry-byebug"
-  gem "better_errors"
-  gem "binding_of_caller"
 end
 
 group :development, :test do
@@ -59,6 +61,7 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'factory_girl_rails'
   gem 'capybara'
+  gem 'rb-fsevent', require:false
   gem 'guard-rspec'
 end
 
